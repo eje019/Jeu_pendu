@@ -16,9 +16,13 @@ void main() {
   print('Mot masque : $motMasque');
 
   //Test de la methode verifierLettre
-  String lettreTest = 'a';
+  String lettreTest = 'A';
   bool resultatVerification = jeu.verifierLettre(lettreTest, motAleatoire);
   print(
     'La lettre $lettreTest est dans le mot ? \n C\'est $resultatVerification',
   );
+
+  //Test de la methode revelerLettre
+  String motRevele = jeu.revelerLettre(lettreTest, motAleatoire, motMasque);
+  print('Mot avec la lettre $lettreTest revelee : $motRevele');
 }
