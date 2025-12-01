@@ -72,4 +72,9 @@ class Pendu {
   bool dejaJouee(String lettre) {
     return lettresJouees.contains(lettre);
   }
+
+  //la fonction qui retourne le nombre de vies restantes
+  int getVieRestantes() {
+    return vies;
+  }
 }
