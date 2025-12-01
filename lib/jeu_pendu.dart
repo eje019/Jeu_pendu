@@ -5,7 +5,7 @@ class Pendu {
   //Variables d'etat du jeu
   String motSecret = ''; //le mot a deviner
 
-  String motMasque = ''; //le mot masque avec des _
+  String motMasque = ''; //le mot masqué avec des _
 
   int vies = 6; //nombre de vies restantes
 
@@ -57,5 +57,13 @@ class Pendu {
     }
     // si c'est bon on reconvertis la liste en String
     return carac.join('');
+  }
+
+  //la fonction ajoutererreur qui fait +1 erreur -1 vie
+  void ajouterErreur() {
+    vies = vies - 1;
+    if (vies < 0) {
+      vies = 0;
+    }
   }
 }
