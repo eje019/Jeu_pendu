@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'dart:io'; // Pour stdin
 
 //La classe principale du jeu
 class Pendu {
@@ -233,5 +234,20 @@ class Pendu {
     if (erreurs < 0) erreurs = 0;
     if (erreurs >= etapes.length) erreurs = etapes.length - 1;
     return etapes[erreurs];
+  }
+
+  String demanderLettreConsole() {
+    print("\n👉 Entrez une lettre: ");
+
+    // Lire l'entrée utilisateur
+    String? input = stdin.readLineSync();
+
+    // Vérifier que ce n'est pas null et nettoyer
+    if (input == null || input.isEmpty) {
+      return "";
+    }
+
+    // Prendre le premier caractère et le mettre en majuscule
+    return input[0].toUpperCase();
   }
 }

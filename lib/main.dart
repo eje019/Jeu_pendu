@@ -1,34 +1,27 @@
 import 'jeu_pendu.dart'; //j'importe la classe
 import 'dart:math'; //j'importe les nombres aleatoires avec dart math un truc come ca
 
+import 'package:flutter/material.dart';
+import 'screens/jeu_screen.dart';
+
 void main() {
-  print('Bienvenue dans le jeu du Pendu !\n');
-  print('Je fais un test de la classe Pendu :\n');
+  runApp(const MyApp());
+}
 
-  Pendu jeu = Pendu(); //je cree une instance de la classe Pendu
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-  //Test de la methode choisirMot
-  String motAleatoire = jeu.choisirMot();
-  print('Mot aleatoire choisi : $motAleatoire');
-
-  //Test de la methode creerMasque
-  String motMasque = jeu.creerMasque(motAleatoire);
-  print('Mot masque : $motMasque');
-
-  //Test de la methode verifierLettre
-  String lettreTest = 'A';
-  bool resultatVerification = jeu.verifierLettre(lettreTest, motAleatoire);
-  print(
-    'La lettre $lettreTest est dans le mot ? \n C\'est $resultatVerification',
-  );
-
-  //Test de la methode revelerLettre
-  String motRevele = jeu.revelerLettre(lettreTest, motAleatoire, motMasque);
-  print('Mot avec la lettre $lettreTest revelee : $motRevele');
-
-  jeu.vies = 5;
-
-  print('Test de la vie qui etait initialement de ${jeu.vies} ');
-  jeu.ajouterErreur();
-  print('et apres de ${jeu.vies}');
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Jeu du Pendu',
+      theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
+        useMaterial3: true,
+        fontFamily: 'Roboto',
+      ),
+      debugShowCheckedModeBanner: false,
+      home: const JeuScreen(),
+    );
+  }
 }
