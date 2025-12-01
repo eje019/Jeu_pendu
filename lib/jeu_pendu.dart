@@ -131,13 +131,13 @@ class Pendu {
   //fonction qui vas nous permettre de savoir  si le joueur a gagne; a trouve toutes les lettres en gros
   //on peut verifier si le motMasque qui change tout le temps est egal a au mot secret et retourner true or false
   //on peut aussi verifier si le mot masque ne contient plus de _
-
   bool aGagne() {
     return motMasque == motSecret;
   }
 
-  //fonction qui verifie si un joueur a perdu et retourne juste false si il a pas gange meme principe que aGagne
+  //fonction qui verifie si un joueur a perdu
+  //u joueur perd dquand ses vies sont a 0 du coup on vas verifier ca et si cest a 0 on retourne true sinon false
   bool aPerdu() {
-    return motMasque == motSecret;
+    return vies <= 0;
   }
 }
