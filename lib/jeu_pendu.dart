@@ -136,8 +136,17 @@ class Pendu {
   }
 
   //fonction qui verifie si un joueur a perdu
-  //u joueur perd dquand ses vies sont a 0 du coup on vas verifier ca et si cest a 0 on retourne true sinon false
+  //un joueur perd quand ses vies sont a 0 du coup on vas verifier ca et si cest a 0 on retourne true sinon false
   bool aPerdu() {
     return vies <= 0;
+  }
+
+  //fonction qui reinitialise le jeu
+  void nouvellePartie() {
+    //on choisitj un nouveau mot masque
+    motSecret = choisirMot();
+
+    //on cree le masque initial
+    motMasque = creerMasque(motSecret);
   }
 }
