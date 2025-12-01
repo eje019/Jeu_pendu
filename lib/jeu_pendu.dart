@@ -66,4 +66,10 @@ class Pendu {
       vies = 0;
     }
   }
+
+  //La fonction deja jouée qui verife si une lettre a deja ete proposee
+  //on avait deja declare une v ariable lettreJouees de type listre qui est censee stocker les lettre joiuee dans un tablea vide de base
+  bool dejaJouee(String lettre) {
+    return lettresJouees.contains(lettre);
+  }
 }

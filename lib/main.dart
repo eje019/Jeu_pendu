@@ -25,4 +25,10 @@ void main() {
   //Test de la methode revelerLettre
   String motRevele = jeu.revelerLettre(lettreTest, motAleatoire, motMasque);
   print('Mot avec la lettre $lettreTest revelee : $motRevele');
+
+  jeu.vies = 5;
+
+  print('Test de la vie qui etait initialement de ${jeu.vies} ');
+  jeu.ajouterErreur();
+  print('et apres de ${jeu.vies}');
 }
