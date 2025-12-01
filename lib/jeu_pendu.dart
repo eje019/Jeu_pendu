@@ -77,4 +77,54 @@ class Pendu {
   int getVieRestantes() {
     return vies;
   }
+
+  //la fonction traiterPpropositoon now
+  //elle verifie si la lettre a deja ete jouee
+  //ajoute la lettre a la liste des lettres jouees
+  //verifie si elle est dans le mot aleatoire a deviner
+  //si oui maj du masque
+  //si non ajoute erreur
+  //retourner un resulta complet
+
+  Map<String, dynamic> traiterProposition(String lettre) {
+    //verifier si la lettre a deja ete jouee
+    if (dejaJouee(lettre)) {
+      return {
+        'success': false,
+        'message': 'Tu vois comme tu es malin ?',
+        'erreur': true,
+        'vies': vies,
+        'masque': motMasque,
+      };
+    }
+
+    //ajout a la liste des lettre
+    lettresJouees.add(lettre);
+
+    //verifie si la lettre est dans le mots masque
+
+    if (verifierLettre(lettre, motSecret)) {
+      motMasque = revelerLettre(lettre, motSecret, motMasque);
+
+      return {
+        'success': true,
+        'message': 'Bonne lettre yanvitche',
+        'lettre': lettre,
+        'vies': vies,
+        'masque': motMasque,
+        'lettresJouees': List.from(lettresJouees),
+      };
+    } else {
+      ajouterErreur();
+
+      return {
+        'success': false,
+        'message': 'C\'est dohi echouuueyyyyy',
+        'lettre': lettre,
+        'vies': vies,
+        'masque': motMasque,
+        'lettresJouees': List.from(lettresJouees),
+      };
+    }
+  }
 }
