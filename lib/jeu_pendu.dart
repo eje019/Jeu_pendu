@@ -135,4 +135,9 @@ class Pendu {
   bool aGagne() {
     return motMasque == motSecret;
   }
+
+  //fonction qui verifie si un joueur a perdu et retourne juste false si il a pas gange meme principe que aGagne
+  bool aPerdu() {
+    return motMasque == motSecret;
+  }
 }
