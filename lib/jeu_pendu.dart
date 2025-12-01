@@ -148,5 +148,17 @@ class Pendu {
 
     //on cree le masque initial
     motMasque = creerMasque(motSecret);
+
+    //on reinitialise les vies a 6 parce que je considere que c'est une nouvelle partie
+    vies = 6;
+
+    //on vide la liste des lettres deja jouees
+    lettresJouees.clear();
+  }
+
+  //la fonction qui donne un affichage plus esthetique du mot banane
+  String afficherMot(String masque) {
+    //on convertit par exemple 'POMME' en 'P O M M E'
+    return masque.split('').join(' ');
   }
 }
