@@ -161,4 +161,77 @@ class Pendu {
     //on convertit par exemple 'POMME' en 'P O M M E'
     return masque.split('').join(' ');
   }
+
+  //fonction qui affiche le dessin du gars pendu selon le nombre d'erreurs
+  String afficherPendu(int erreurs) {
+    //c;est un dessin ascii simple d'abord
+    List<String> etapes = [
+      '''
+ ____
+|    |
+|
+|
+|
+|
+|
+|_''',
+      '''
+ ____
+|    |
+|    O
+|
+|
+|
+|
+|_''',
+      '''
+ ____
+|    |
+|    O
+|    |
+|
+|
+|
+|_''',
+      '''
+ ____
+|    |
+|    O
+|   /|
+|
+|
+|
+|_''',
+      '''
+ ____
+|    |
+|    O
+|   /|\\
+|
+|
+|
+|_''',
+      '''
+ ____
+|    |
+|    O
+|   /|\\
+|   /
+|
+|
+|_''',
+      '''
+ ____
+|    |
+|    O
+|   /|\\
+|   / \\
+|
+|
+|_''',
+    ];
+    if (erreurs < 0) erreurs = 0;
+    if (erreurs >= etapes.length) erreurs = etapes.length - 1;
+    return etapes[erreurs];
+  }
 }
