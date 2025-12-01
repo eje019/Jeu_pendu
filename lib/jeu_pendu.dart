@@ -127,4 +127,12 @@ class Pendu {
       };
     }
   }
+
+  //fonction qui vas nous permettre de savoir  si le joueur a gagne; a trouve toutes les lettres en gros
+  //on peut verifier si le motMasque qui change tout le temps est egal a au mot secret et retourner true or false
+  //on peut aussi verifier si le mot masque ne contient plus de _
+
+  bool aGagne() {
+    return motMasque == motSecret;
+  }
 }
