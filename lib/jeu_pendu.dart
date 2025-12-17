@@ -12,7 +12,15 @@ class Pendu {
 
   List<String> lettresJouees = []; //les lettres deja jouees
 
-  List<String> mots = ['ESGIS', 'CHAISE', 'ORDINATEUR', 'PROGRAMMATION'];
+  List<String> mots = [
+    'ESGIS',
+    'CHAISE',
+    'ORDINATEUR',
+    'POMME',
+    'CIEL',
+    'ARABE',
+    'NOIR',
+  ];
 
   //fonction qui choisit un mot aleatoire
   String choisirMot() {
@@ -237,7 +245,7 @@ class Pendu {
   }
 
   String demanderLettreConsole() {
-    print("\n👉 Entrez une lettre: ");
+    print("\n Entrez une lettre: ");
 
     // Lire l'entrée utilisateur
     String? input = stdin.readLineSync();
