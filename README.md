@@ -2,14 +2,13 @@ Jeu du Pendu - Version Dart Console
 Un jeu classique où vous devez deviner un mot lettre par lettre avant que le bonhomme ne soit complètement pendu !
 
 STRUCTURE DU PROJET
-text
 pendu_console/
 ├── jeu_pendu.dart    # Toutes les fonctions du jeu
 ├── main.dart         # Programme principal
 └── README.md         # Ce fichier
+
 COMMENT DÉMARRER
 1. INSTALLATION
-bash
 # 1.  Dart est installé
 dart --version
 
